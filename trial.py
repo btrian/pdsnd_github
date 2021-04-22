@@ -49,11 +49,10 @@ def get_filters():
         break
 
     print('Hello! Let\'s explore some US bikeshare data!')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
 
-    print('-'*40)
+    print('-'*41)
     return ask_city, month, day
 
 
@@ -63,8 +62,6 @@ def load_data(ask_city, month, day):
         df = pd.read_csv('new_york_city.csv')
     else:
         df = pd.read_csv(CITY_DATA[ask_city])
-
-    # print(df.columns)
 
    # Loads data for the specified city and filters by month and day if applicable.
     df['Start Time'] = pd.to_datetime(df['Start Time'])
